@@ -4,6 +4,10 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# Ignore secret constants file
+src/main/resources/secrets.properties
+
+
 ### STS ###
 .apt_generated
 .classpath
