@@ -12,6 +12,7 @@ import com.example.hostelManagement.models.user.User;
 import com.example.hostelManagement.service.hostel.HostelService;
 import com.example.hostelManagement.service.user.StaffService;
 import com.example.hostelManagement.service.user.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -72,7 +73,7 @@ public class HostelController {
 
     @PreAuthorize("hasAuthority('STAFF')")
     @PostMapping("/create")
-    public ResponseEntity<?> createHostel(@RequestBody HostelDto hostelDto) {
+    public ResponseEntity<?> createHostel(@Valid @RequestBody HostelDto hostelDto) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         UserPrincipal userDetails = (UserPrincipal) authentication.getPrincipal();
         String email = userDetails.getUsername();

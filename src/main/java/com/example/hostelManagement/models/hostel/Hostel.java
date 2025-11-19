@@ -5,6 +5,7 @@ import com.example.hostelManagement.models.FeesPayment;
 import com.example.hostelManagement.models.user.Staff;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +17,11 @@ public class Hostel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer hostel_id;
 
+    @Min(0)
     @Column(nullable = false)
     private Integer capacity;
 
+    @Min(0)
     @Column(nullable = false)
     private Integer empty_seats;
 
@@ -31,6 +34,7 @@ public class Hostel {
     @Column
     private String phone;
 
+    @Min(0)
     @Column(nullable = false)
     private Integer fees;
 
