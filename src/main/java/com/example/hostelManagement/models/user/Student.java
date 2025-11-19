@@ -5,18 +5,12 @@ import com.example.hostelManagement.models.FeesPayment;
 import com.example.hostelManagement.models.hostel.Room;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-@ToString
 @Entity
 public class Student extends User {
 
@@ -34,4 +28,27 @@ public class Student extends User {
     @JsonManagedReference
     private List<FeesPayment> feesPayments = new ArrayList<>();
 
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public List<Application> getApplications() {
+        return applications;
+    }
+
+    public void setApplications(List<Application> applications) {
+        this.applications = applications;
+    }
+
+    public List<FeesPayment> getFeesPayments() {
+        return feesPayments;
+    }
+
+    public void setFeesPayments(List<FeesPayment> feesPayments) {
+        this.feesPayments = feesPayments;
+    }
 }

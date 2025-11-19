@@ -2,15 +2,8 @@ package com.example.hostelManagement.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.io.Serializable;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Embeddable
 public class ApplicationId implements Serializable {
 
@@ -20,4 +13,19 @@ public class ApplicationId implements Serializable {
     @Column(name = "hostel_id")
     private Integer hostelId;
 
+    public Integer getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(Integer studentId) {
+        this.studentId = studentId;
+    }
+
+    public Integer getHostelId() {
+        return hostelId;
+    }
+
+    public void setHostelId(Integer hostelId) {
+        this.hostelId = hostelId;
+    }
 }
